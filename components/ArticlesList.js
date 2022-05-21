@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Card from './Card'
 
 export default function ArticlesList({ articles: posts }) {
+    // eslint-disable-next-line no-unused-vars
     const [articles, setArticles] = useState(posts.slice(0, 6))
     const [showAll, setShowAll] = useState(false)
 
