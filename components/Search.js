@@ -85,8 +85,6 @@ export default function Search(props) {
                             autocompleteState.isOpen ? ' rounded-b-none' : ''
                         }`}
                         {...inputProps}
-                        aria-labelledby='autocomplete-1-label'
-                        id='autocomplete-1-input'
                         onKeyDown={e => {
                             if (e.key === 'Enter') {
                                 e.preventDefault()
