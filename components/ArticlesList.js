@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-// import Link from 'next/link'
+import Link from 'next/link'
 // import Card from './Card'
 
 export default function ArticlesList({ articles: posts }) {
@@ -16,16 +16,16 @@ export default function ArticlesList({ articles: posts }) {
 
     return (
         <>
-            {/* <Link href='/'>
+            <Link href='/'>
                 <a className='text-2xl font-bold mb-8 ml-4 w-fit block'>
                     Nuestros artículos
                 </a>
             </Link>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-12'>
+            {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-12'>
                 {articles.map(article => (
                     <Card key={article.id} article={article.attributes} />
                 ))}
-            </div>
+            </div> */}
             {!showAll && (
                 <div className='relative flex justify-center items-center pt-14 pb-6'>
                     <div className='px-5 bg-white'>
@@ -39,7 +39,7 @@ export default function ArticlesList({ articles: posts }) {
                     </div>
                     <div className='absolute w-full bg-gray-200 h-px -z-10'></div>
                 </div>
-            )} */}
+            )}
         </>
     )
 }
