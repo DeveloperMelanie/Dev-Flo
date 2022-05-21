@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import Search from './Search'
+
+const SearchWithoutSSR = dynamic(() => import('./Search'), { ssr: false })
 
 export default function Header() {
     const [showMenu, setShowMenu] = useState(false)
@@ -160,7 +162,7 @@ export default function Header() {
                     showSearch ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
             >
-                <Search />
+                <SearchWithoutSSR />
             </div>
         </>
     )

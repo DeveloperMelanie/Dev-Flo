@@ -1,14 +1,9 @@
-import { useEffect } from 'react'
 import Head from 'next/head'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import 'styles/globals.css'
 
 export default function BlogSite({ Component, pageProps }) {
-    useEffect(() => {
-        console.clear()
-    }, [])
-
     return (
         <>
             <Head>
