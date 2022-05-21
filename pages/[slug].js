@@ -3,7 +3,7 @@ import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-// import { formatDate } from 'utils'
+import { formatDate } from 'utils'
 
 export default function Article({ article, latestArticles }) {
     return (
@@ -15,10 +15,10 @@ export default function Article({ article, latestArticles }) {
                 <h1 className='text-4xl leading-tight font-bold mb-5 max-w-4xl'>
                     {article.title}
                 </h1>
-                {/* <p className='uppercase text-gray-500 text-sm font-semibold mb-8'>
+                <p className='uppercase text-gray-500 text-sm font-semibold mb-8'>
                     {formatDate(article.date)} - {article.time} minutos de
                     lectura
-                </p> */}
+                </p>
                 <img
                     src={article.image.data.attributes.url}
                     alt={article.title}
@@ -61,10 +61,10 @@ export default function Article({ article, latestArticles }) {
                                     <h4 className='text-lg font-semibold mb-3 hover:text-gray-700 transition-colors'>
                                         {article.title}
                                     </h4>
-                                    {/* <p className='uppercase text-gray-500 text-sm font-semibold'>
+                                    <p className='uppercase text-gray-500 text-sm font-semibold'>
                                         {formatDate(article.date)} -{' '}
                                         {article.time} minutos de lectura
-                                    </p> */}
+                                    </p>
                                 </div>
                             </a>
                         </Link>
