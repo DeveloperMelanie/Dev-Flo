@@ -1,6 +1,6 @@
 import axiosClient from 'config/axios'
 import FeaturedArticle from 'components/FeaturedArticle'
-// import ArticlesList from 'components/ArticlesList'
+import ArticlesList from 'components/ArticlesList'
 
 export default function Home({ articles, featuredArticle }) {
     return (
@@ -9,7 +9,7 @@ export default function Home({ articles, featuredArticle }) {
                 <FeaturedArticle article={featuredArticle.attributes} />
             </section>
             <section className='container pt-14'>
-                {/* <ArticlesList articles={articles} /> */}
+                <ArticlesList articles={articles} />
             </section>
         </>
     )
