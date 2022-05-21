@@ -1,16 +1,92 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+    -webkit-appearance: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.article p {
+    margin-bottom: 2rem;
 }
 
-* {
-  box-sizing: border-box;
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.article h1 {
+    font-size: 2rem;
+}
+
+.article h2 {
+    font-size: 1.5rem;
+}
+
+.article h3 {
+    font-size: 1.25rem;
+}
+
+.article h4 {
+    font-size: 1rem;
+}
+
+.article h5 {
+    font-size: 0.875rem;
+}
+
+.article h6 {
+    font-size: 0.75rem;
+}
+
+.article ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    list-style: disc;
+}
+
+.article ol {
+    margin-bottom: 1rem;
+    padding-left: 1.2rem;
+    list-style: decimal;
+}
+
+.article code {
+    font-size: 0.875rem;
+}
+
+.article pre {
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    background: #23292e;
+    color: #fff;
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+}
+
+.article blockquote {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 0.25rem solid #d0d1d1;
+}
+
+.article blockquote p {
+    margin-bottom: 0;
+}
+
+.article a {
+    box-shadow: 0 -1px 0 0 rgb(29 78 216) inset;
+    transition: box-shadow 0.3s ease-in;
+}
+
+.article a:hover {
+    box-shadow: 0 -1px 0 0 #000 inset;
 }

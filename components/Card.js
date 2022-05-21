@@ -1,0 +1,42 @@
+import Link from 'next/link'
+import { formatDate } from 'utils'
+
+export default function Card({ article }) {
+    return (
+        <article>
+            <Link href={`/${article.slug}`}>
+                <a>
+                    <img
+                        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${article.image.data.attributes.url}`}
+                        alt={article.title}
+                        className='w-full md:h-64 object-cover shadow hover:-translate-y-1 transition-all duration-300'
+                    />
+                </a>
+            </Link>
+            <div className='pt-8'>
+                <Link href={`/${article.slug}`}>
+                    <a className='uppercase block font-medium text-blue-700 text-sm mb-4 w-fit'>
+                        {article.category.data?.attributes.name}
+                    </a>
+                </Link>
+                <h2 className='text-xl font-bold mb-4'>
+                    <Link href={`/${article.slug}`}>
+                        <a>{article.title}</a>
+                    </Link>
+                </h2>
+                <p className='uppercase text-gray-500 text-sm font-semibold mb-4'>
+                    <Link href={`/${article.slug}`}>
+                        <a>{formatDate(article.date)}</a>
+                    </Link>{' '}
+                    - {article.time} minutos de lectura
+                </p>
+                <p className='mb-4 text-gray-800'>{article.content}</p>
+                <Link href={`/${article.slug}`}>
+                    <a className='border block text-center border-gray-200 py-2 hover:bg-gray-200 transition-colors'>
+                        Leer más
+                    </a>
+                </Link>
+            </div>
+        </article>
+    )
+}
