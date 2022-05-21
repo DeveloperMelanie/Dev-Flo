@@ -14,7 +14,10 @@ export default function Header() {
     }, [router.pathname])
 
     useEffect(() => {
-        document.body.classList.toggle('overflow-hidden')
+        if (showMenu || showSearch) {
+            return document.body.classList.add('overflow-hidden')
+        }
+        document.body.classList.remove('overflow-hidden')
     }, [showMenu, showSearch])
 
     useEffect(() => {

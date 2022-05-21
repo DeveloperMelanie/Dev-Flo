@@ -12,7 +12,7 @@ export default function FeaturedArticle({ article }) {
             <Link href={`/${article.slug}`}>
                 <a>
                     <img
-                        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${article.image.data.attributes.url}`}
+                        src={article.image.data.attributes.url}
                         alt={article.title}
                         className='w-full object-cover shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
                     />

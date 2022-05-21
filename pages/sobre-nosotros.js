@@ -17,7 +17,7 @@ export default function AboutUs({ features }) {
                     >
                         <div>
                             <img
-                                src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${feature.icon.data.attributes.url}`}
+                                src={feature.icon.data.attributes.url}
                                 alt={feature.name}
                                 className='w-20 sm:w-60 md:w-72'
                             />

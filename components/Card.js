@@ -7,7 +7,7 @@ export default function Card({ article }) {
             <Link href={`/${article.slug}`}>
                 <a>
                     <img
-                        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${article.image.data.attributes.url}`}
+                        src={article.image.data.attributes.url}
                         alt={article.title}
                         className='w-full md:h-64 object-cover shadow hover:-translate-y-1 transition-all duration-300'
                     />

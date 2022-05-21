@@ -12,7 +12,7 @@ const AutocompleteItem = ({
             <Link href={`/${slug}`}>
                 <a className='hover:bg-blue-200 flex gap-4 p-4'>
                     <img
-                        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${image.data.attributes.url}`}
+                        src={image.data.attributes.url}
                         alt={title}
                         className='w-20 h-16 object-cover'
                     />

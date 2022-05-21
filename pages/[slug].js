@@ -20,7 +20,7 @@ export default function Article({ article, latestArticles }) {
                     lectura
                 </p>
                 <img
-                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${article.image.data.attributes.url}`}
+                    src={article.image.data.attributes.url}
                     alt={article.title}
                     className='w-full object-cover shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
                 />
@@ -53,7 +53,7 @@ export default function Article({ article, latestArticles }) {
                         <Link key={article.slug} href={`/${article.slug}`}>
                             <a className='flex gap-6'>
                                 <img
-                                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${article.image.data.attributes.url}`}
+                                    src={article.image.data.attributes.url}
                                     alt={article.title}
                                     className='w-[144px] h-[123px] object-cover shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
                                 />
@@ -83,6 +83,8 @@ export async function getStaticProps({ params }) {
             `/articles?pagination[pageSize]=3&sort=createdAt%3Adesc&filters[slug][$ne]=${slug}&populate=*`
         ),
     ])
+
+    console.log(latestArticles.data.map(article => article.attributes))
 
     return {
         props: {
