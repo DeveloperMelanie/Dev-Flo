@@ -1,15 +1,15 @@
 import axiosClient from 'config/axios'
-// import FeaturedArticle from 'components/FeaturedArticle'
-import ArticlesList from 'components/ArticlesList'
+import FeaturedArticle from 'components/FeaturedArticle'
+// import ArticlesList from 'components/ArticlesList'
 
 export default function Home({ articles, featuredArticle }) {
     return (
         <>
             <section className='container'>
-                {/* <FeaturedArticle article={featuredArticle.attributes} /> */}
+                <FeaturedArticle article={featuredArticle.attributes} />
             </section>
             <section className='container pt-14'>
-                <ArticlesList articles={articles} />
+                {/* <ArticlesList articles={articles} /> */}
             </section>
         </>
     )
