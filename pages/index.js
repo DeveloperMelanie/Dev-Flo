@@ -1,6 +1,6 @@
 import axiosClient from 'config/axios'
-import FeaturedArticle from 'components/FeaturedArticle'
-import ArticlesList from 'components/ArticlesList'
+// import FeaturedArticle from 'components/FeaturedArticle'
+// import ArticlesList from 'components/ArticlesList'
 
 export default function Home({ articles, featuredArticle }) {
     return (
