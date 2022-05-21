@@ -128,7 +128,7 @@ export default function Header() {
                 </div>
             </header>
             <div
-                className={`sm:hidden fixed top-0 left-0 w-full h-screen bg-white flex justify-center items-center text-center transition-all ease-in duration-300 ${
+                className={`sm:hidden fixed z-40 top-0 left-0 w-full h-screen bg-white flex justify-center items-center text-center transition-all ease-in duration-300 ${
                     showMenu ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
             >
