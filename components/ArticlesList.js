@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-// import Card from './Card'
+import Card from './Card'
 
 export default function ArticlesList({ articles: posts }) {
-    const [articles, setArticles] = useState(posts.slice(0, 6))
+    const [articles, setArticles] = useState(posts)
     const [showAll, setShowAll] = useState(false)
 
     useEffect(() => {
@@ -21,11 +21,11 @@ export default function ArticlesList({ articles: posts }) {
                     Nuestros artículos
                 </a>
             </Link>
-            {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-12'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-12'>
                 {articles.map(article => (
                     <Card key={article.id} article={article.attributes} />
                 ))}
-            </div> */}
+            </div>
             {!showAll && (
                 <div className='relative flex justify-center items-center pt-14 pb-6'>
                     <div className='px-5 bg-white'>
