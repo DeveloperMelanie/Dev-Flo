@@ -84,8 +84,6 @@ export async function getStaticProps({ params }) {
         ),
     ])
 
-    console.log(latestArticles.data.map(article => article.attributes))
-
     return {
         props: {
             article: article.data[0].attributes,
@@ -93,6 +91,7 @@ export async function getStaticProps({ params }) {
                 article => article.attributes
             ),
         },
+        revalidate: 10,
     }
 }
 
