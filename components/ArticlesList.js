@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import Card from './Card'
+// import Link from 'next/link'
+// import Card from './Card'
 
 export default function ArticlesList({ articles: posts }) {
     const [articles, setArticles] = useState(posts.slice(0, 6))
@@ -10,13 +10,13 @@ export default function ArticlesList({ articles: posts }) {
         if (showAll) setArticles(posts)
     }, [showAll])
 
-    // useEffect(() => {
-    //     if (articles.length <= 5) setShowAll(true)
-    // }, [])
+    useEffect(() => {
+        if (articles.length <= 5) setShowAll(true)
+    }, [])
 
     return (
         <>
-            <Link href='/'>
+            {/* <Link href='/'>
                 <a className='text-2xl font-bold mb-8 ml-4 w-fit block'>
                     Nuestros artículos
                 </a>
@@ -39,7 +39,7 @@ export default function ArticlesList({ articles: posts }) {
                     </div>
                     <div className='absolute w-full bg-gray-200 h-px -z-10'></div>
                 </div>
-            )}
+            )} */}
         </>
     )
 }
