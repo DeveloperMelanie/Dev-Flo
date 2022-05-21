@@ -10,9 +10,9 @@ export default function ArticlesList({ articles: posts }) {
         if (showAll) setArticles(posts)
     }, [showAll])
 
-    useEffect(() => {
-        if (articles.length <= 5) setShowAll(true)
-    }, [])
+    // useEffect(() => {
+    //     if (articles.length <= 5) setShowAll(true)
+    // }, [])
 
     return (
         <>
