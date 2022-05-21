@@ -30,7 +30,7 @@ export default function Article({ article, latestArticles }) {
                             img: props => (
                                 <img
                                     {...props}
-                                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${props.src}`}
+                                    src={props.src}
                                     className='w-full object-cover shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
                                 />
                             ),
@@ -55,7 +55,7 @@ export default function Article({ article, latestArticles }) {
                                 <img
                                     src={article.image.data.attributes.url}
                                     alt={article.title}
-                                    className='w-[144px] h-[123px] object-cover shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
+                                    className='min-w-[144px] h-[123px] object-cover shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
                                 />
                                 <div>
                                     <h4 className='text-lg font-semibold mb-3 hover:text-gray-700 transition-colors'>
@@ -84,6 +84,15 @@ export async function getStaticProps({ params }) {
         ),
     ])
 
+    if (!article.data[0]) {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/',
+            },
+        }
+    }
+
     return {
         props: {
             article: article.data[0].attributes,
@@ -105,6 +114,6 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: false,
+        fallback: 'blocking',
     }
 }

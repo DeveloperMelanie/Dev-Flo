@@ -14,7 +14,7 @@ const AutocompleteItem = ({
                     <img
                         src={image.data.attributes.url}
                         alt={title}
-                        className='w-20 h-16 object-cover'
+                        className='min-w-[5rem] h-16 object-cover'
                     />
                     <div>
                         <h3 className='text-base font-semibold mb-2'>
@@ -85,6 +85,8 @@ export default function Search(props) {
                             autocompleteState.isOpen ? ' rounded-b-none' : ''
                         }`}
                         {...inputProps}
+                        aria-labelledby='autocomplete-1-label'
+                        id='autocomplete-1-input'
                         onKeyDown={e => {
                             if (e.key === 'Enter') {
                                 e.preventDefault()
