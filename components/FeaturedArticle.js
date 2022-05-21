@@ -26,7 +26,7 @@ export default function FeaturedArticle({ article }) {
                     </div>
                 </a>
             </Link>
-            <div className='pt-10 pl-4'>
+            <div className='pt-10 md:pl-4'>
                 <Link href={`/${article.slug}`}>
                     <a className='uppercase block font-medium text-blue-700 text-sm mb-5 w-fit'>
                         {article.category.data.attributes.name}
