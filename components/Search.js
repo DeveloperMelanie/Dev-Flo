@@ -7,11 +7,16 @@ import { formatDate } from 'utils'
 
 const AutocompleteItem = ({
     attributes: { slug, title, image, date, time },
+    latest,
 }) => {
     return (
         <li>
             <Link href={`/${slug}`}>
-                <a className='hover:bg-blue-200 flex gap-4 p-4'>
+                <a
+                    className={`hover:bg-blue-200 flex gap-4 p-4${
+                        latest ? ' rounded-lg rounded-t-none' : ''
+                    }`}
+                >
                     <div className='relative min-w-[5rem] h-16'>
                         <Image
                             src={image.data.attributes.url}
@@ -45,6 +50,7 @@ export default function Search(props) {
         () =>
             createAutocomplete({
                 placeholder: 'Buscar artículos',
+                debug: true,
                 onStateChange: ({ state }) => setAutocompleteState(state),
                 getSources: () => [
                     {
@@ -77,19 +83,23 @@ export default function Search(props) {
 
     return (
         <>
-            <div className='fixed top-0 left-0 w-full h-screen bg-black opacity-20 z-10' />
             <form
                 ref={formRef}
-                className='fixed top-0 left-0 w-full h-screen flex justify-center items-start pt-32 pb-16 overflow-y-auto z-50'
+                className='fixed top-0 left-0 w-full h-screen flex justify-center items-start pt-32 pb-16 overflow-y-auto px-4 z-50'
                 {...formProps}
             >
-                <div className='flex-1 max-w-lg relative px-4' id='input'>
+                <div
+                    id='out-of-search'
+                    className='fixed inset-0 w-full h-screen bg-black opacity-20 z-10'
+                />
+                <div className='flex-1 max-w-lg relative z-20'>
                     <input
                         ref={inputRef}
                         className={`h-12 w-full pl-4 pr-4 text-gray-800 placeholder-gray-400 outline-none shadow-2xl bg-white rounded-xl${
                             autocompleteState.isOpen ? ' rounded-b-none' : ''
                         }`}
                         {...inputProps}
+                        id='search'
                         onKeyDown={e => {
                             if (e.key === 'Enter') {
                                 e.preventDefault()
@@ -112,9 +122,13 @@ export default function Search(props) {
                                                 <ul
                                                     {...autocomplete.getListProps()}
                                                 >
-                                                    {items.map(item => (
+                                                    {items.map((item, i) => (
                                                         <AutocompleteItem
                                                             key={item.id}
+                                                            latest={
+                                                                i ===
+                                                                items.length - 1
+                                                            }
                                                             {...item}
                                                         />
                                                     ))}

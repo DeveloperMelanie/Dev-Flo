@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { manageSearch } from 'utils'
 import Search from './Search'
 
 export default function Header() {
@@ -21,25 +22,7 @@ export default function Header() {
     }, [showMenu, showSearch])
 
     useEffect(() => {
-        if (showSearch) {
-            const search = document.querySelector('#input').firstElementChild
-            setTimeout(() => {
-                search.focus()
-            }, 50)
-
-            const searchIcon = document.querySelector('#search-icon')
-            window.onclick = e => {
-                if (e.target !== search && e.target !== searchIcon) {
-                    setShowSearch(false)
-                }
-            }
-
-            window.onkeydown = e => {
-                if (e.key === 'Escape') {
-                    setShowSearch(false)
-                }
-            }
-        }
+        if (showSearch) manageSearch(setShowSearch)
     }, [showSearch])
 
     return (
@@ -56,7 +39,6 @@ export default function Header() {
                                 />
                             </a>
                         </Link>
-
                         <nav className='hidden sm:block'>
                             <ul className='flex gap-5 text-base font-semibold text-gray-700'>
                                 <li>
@@ -117,7 +99,6 @@ export default function Header() {
                             ></div>
                         </div>
                         <img
-                            id='search-icon'
                             src='/search.svg'
                             width={24}
                             alt='Buscar artículos en Dev-Flo'
@@ -156,7 +137,7 @@ export default function Header() {
                 </ul>
             </div>
             <div
-                className={`transition-all duration-300 ${
+                className={`relative z-20 transition-all duration-300 ${
                     showSearch ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
             >
