@@ -1,6 +1,6 @@
 import Head from 'next/head'
-// import Header from 'components/Header'
-import Footer from 'components/Footer'
+import Header from 'components/Header'
+// import Footer from 'components/Footer'
 import 'styles/globals.css'
 
 export default function BlogSite({ Component, pageProps }) {
@@ -15,11 +15,11 @@ export default function BlogSite({ Component, pageProps }) {
                 <link rel='icon' type='image/svg+xml' href='/icon.svg' />
             </Head>
 
-            {/* <Header /> */}
+            <Header />
             <main className='py-12'>
                 <Component {...pageProps} />
             </main>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }
