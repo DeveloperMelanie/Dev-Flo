@@ -1,14 +1,14 @@
 import axiosClient from 'config/axios'
-import Link from 'next/link'
-// import ReactMarkdown from 'react-markdown'
-// import remarkGfm from 'remark-gfm'
-// import rehypeRaw from 'rehype-raw'
+// import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import { formatDate } from 'utils'
 
 export default function Article({ article, latestArticles }) {
     return (
         <div className='container lg:flex lg:justify-center lg:gap-12'>
-            {/* <article className='lg:w-2/3'>
+            <article className='lg:w-2/3'>
                 <span className='uppercase block font-medium text-blue-700 text-sm mb-3 w-fit'>
                     {article.category.data?.attributes.name}
                 </span>
@@ -43,8 +43,8 @@ export default function Article({ article, latestArticles }) {
                         {article.article}
                     </ReactMarkdown>
                 </div>
-            </article> */}
-            <aside className='lg:w-1/3 pt-6 lg:pt-0'>
+            </article>
+            {/* <aside className='lg:w-1/3 pt-6 lg:pt-0'>
                 <h5 className='text-xl font-bold pb-3 border-b border-gray-300'>
                     Últimas publicaciones
                 </h5>
@@ -70,7 +70,7 @@ export default function Article({ article, latestArticles }) {
                         </Link>
                     ))}
                 </div>
-            </aside>
+            </aside> */}
         </div>
     )
 }
