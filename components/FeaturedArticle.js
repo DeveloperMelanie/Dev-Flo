@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { formatDate } from 'utils'
 
@@ -11,11 +12,18 @@ export default function FeaturedArticle({ article }) {
             </Link>
             <Link href={`/${article.slug}`}>
                 <a>
-                    <img
-                        src={article.image.data.attributes.url}
-                        alt={article.title}
-                        className='w-full object-cover shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
-                    />
+                    <div className='w-full shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'>
+                        <Image
+                            src={article.image.data.attributes.url}
+                            width={1200}
+                            height={800}
+                            quality={100}
+                            layout='responsive'
+                            objectFit='cover'
+                            priority={true}
+                            alt={article.title}
+                        />
+                    </div>
                 </a>
             </Link>
             <div className='pt-10 pl-4'>

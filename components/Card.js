@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { formatDate } from 'utils'
 
@@ -6,11 +7,17 @@ export default function Card({ article }) {
         <article>
             <Link href={`/${article.slug}`}>
                 <a>
-                    <img
-                        src={article.image.data.attributes.url}
-                        alt={article.title}
-                        className='w-full md:h-64 object-cover shadow hover:-translate-y-1 transition-all duration-300'
-                    />
+                    <div className='w-full shadow hover:-translate-y-1 transition-all duration-300'>
+                        <Image
+                            src={article.image.data.attributes.url}
+                            width={370}
+                            height={256}
+                            layout='responsive'
+                            objectFit='cover'
+                            priority={true}
+                            alt={article.title}
+                        />
+                    </div>
                 </a>
             </Link>
             <div className='pt-8'>

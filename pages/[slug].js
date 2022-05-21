@@ -1,4 +1,5 @@
 import axiosClient from 'config/axios'
+import Image from 'next/image'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -19,11 +20,17 @@ export default function Article({ article, latestArticles }) {
                     {formatDate(article.date)} - {article.time} minutos de
                     lectura
                 </p>
-                <img
-                    src={article.image.data.attributes.url}
-                    alt={article.title}
-                    className='w-full object-cover shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
-                />
+                <div className='w-full shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'>
+                    <Image
+                        src={article.image.data.attributes.url}
+                        width={750}
+                        height={500}
+                        layout='responsive'
+                        objectFit='cover'
+                        priority={true}
+                        alt={article.title}
+                    />
+                </div>
                 <div className='pt-10 sm:px-6'>
                     <ReactMarkdown
                         components={{
@@ -52,11 +59,16 @@ export default function Article({ article, latestArticles }) {
                     {latestArticles.map(article => (
                         <Link key={article.slug} href={`/${article.slug}`}>
                             <a className='flex gap-6'>
-                                <img
-                                    src={article.image.data.attributes.url}
-                                    alt={article.title}
-                                    className='min-w-[144px] h-[123px] object-cover shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'
-                                />
+                                <div className='min-w-[144px] h-[123px] shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300'>
+                                    <Image
+                                        src={article.image.data.attributes.url}
+                                        width={144}
+                                        height={123}
+                                        layout='responsive'
+                                        objectFit='cover'
+                                        alt={article.title}
+                                    />
+                                </div>
                                 <div>
                                     <h4 className='text-lg font-semibold mb-3 hover:text-gray-700 transition-colors'>
                                         {article.title}

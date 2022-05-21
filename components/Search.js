@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useMemo, useRef, useState } from 'react'
 import { createAutocomplete } from '@algolia/autocomplete-core'
 import Link from 'next/link'
@@ -11,11 +12,15 @@ const AutocompleteItem = ({
         <li>
             <Link href={`/${slug}`}>
                 <a className='hover:bg-blue-200 flex gap-4 p-4'>
-                    <img
-                        src={image.data.attributes.url}
-                        alt={title}
-                        className='min-w-[5rem] h-16 object-cover'
-                    />
+                    <div className='relative min-w-[5rem] h-16'>
+                        <Image
+                            src={image.data.attributes.url}
+                            layout='fill'
+                            objectFit='cover'
+                            quality={100}
+                            alt={title}
+                        />
+                    </div>
                     <div>
                         <h3 className='text-base font-semibold mb-2'>
                             {title}
