@@ -4,5 +4,7 @@ export const formatDate = date => {
         month: 'short',
         day: 'numeric',
     }
-    return new Date(date).toLocaleDateString('es-ES', options)
+    const rtf = new Intl.DateTimeFormat('es-ES', options)
+    // return new Date(date).toLocaleDateString('es-ES', options)
+    return rtf.format(new Date(date))
 }
