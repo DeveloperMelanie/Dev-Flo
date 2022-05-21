@@ -3,12 +3,12 @@ import Link from 'next/link'
 import Card from './Card'
 
 export default function ArticlesList({ articles: posts }) {
-    const [articles, setArticles] = useState(posts)
+    const [articles, setArticles] = useState(posts.slice(0, 6))
     const [showAll, setShowAll] = useState(false)
 
-    useEffect(() => {
-        if (showAll) setArticles(posts)
-    }, [showAll])
+    // useEffect(() => {
+    //     if (showAll) setArticles(posts)
+    // }, [showAll])
 
     useEffect(() => {
         if (articles.length <= 5) setShowAll(true)
