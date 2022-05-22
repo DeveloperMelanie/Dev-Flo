@@ -1,10 +1,12 @@
 import axiosClient from 'config/axios'
 import FeaturedArticle from 'components/FeaturedArticle'
 import ArticlesList from 'components/ArticlesList'
+import SEO from 'components/SEO'
 
 export default function Home({ articles, featuredArticle }) {
     return (
         <>
+            <SEO />
             <section className='container'>
                 <FeaturedArticle article={featuredArticle.attributes} />
             </section>
