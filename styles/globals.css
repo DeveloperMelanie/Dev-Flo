@@ -80,6 +80,10 @@ input[type='search']::-webkit-search-results-decoration {
     border-left: 0.25rem solid #d0d1d1;
 }
 
+.dark .article blockquote {
+    border-left-color: #525252;
+}
+
 .article blockquote p {
     margin-bottom: 0;
 }
@@ -91,4 +95,8 @@ input[type='search']::-webkit-search-results-decoration {
 
 .article a:hover {
     box-shadow: 0 -1px 0 0 #000 inset;
+}
+
+.dark .article a {
+    box-shadow: 0 -1px 0 0 rgb(107, 146, 255) inset;
 }

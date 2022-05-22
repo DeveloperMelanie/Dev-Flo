@@ -13,7 +13,7 @@ const AutocompleteItem = ({
         <li>
             <Link href={`/${slug}`}>
                 <a
-                    className={`hover:bg-blue-200 flex gap-4 p-4${
+                    className={`hover:bg-blue-200 dark:hover:bg-neutral-700 flex gap-4 p-4${
                         latest ? ' rounded-lg rounded-t-none' : ''
                     }`}
                 >
@@ -30,7 +30,7 @@ const AutocompleteItem = ({
                         <h3 className='text-base font-semibold mb-2'>
                             {title}
                         </h3>
-                        <p className='uppercase text-gray-500 text-sm font-semibold'>
+                        <p className='uppercase text-gray-500 dark:text-gray-400 text-sm font-semibold'>
                             {formatDate(date)} - {time} minutos de lectura
                         </p>
                     </div>
@@ -90,12 +90,12 @@ export default function Search(props) {
             >
                 <div
                     id='out-of-search'
-                    className='fixed inset-0 w-full h-screen bg-black opacity-20 z-10'
+                    className='fixed inset-0 w-full h-screen bg-black opacity-20 dark:opacity-50 z-10'
                 />
                 <div className='flex-1 max-w-lg relative z-20'>
                     <input
                         ref={inputRef}
-                        className={`h-12 w-full pl-4 pr-4 text-gray-800 placeholder-gray-400 outline-none shadow-2xl bg-white rounded-xl${
+                        className={`h-12 w-full pl-4 pr-4 text-gray-800 dark:text-gray-300 placeholder-gray-400 dark:placeholder-gray-300 outline-none shadow-2xl dark:shadow-none bg-white dark:bg-neutral-800 rounded-xl${
                             autocompleteState.isOpen ? ' rounded-b-none' : ''
                         }`}
                         {...inputProps}
@@ -108,7 +108,7 @@ export default function Search(props) {
                     />
                     {autocompleteState.isOpen && (
                         <div
-                            className='relative z-20 w-full border border-gray-100 bg-white rounded-lg rounded-t-none shadow-lg'
+                            className='relative z-20 w-full border-t border-gray-100 dark:border-neutral-600 bg-white dark:bg-neutral-800 rounded-lg rounded-t-none shadow-lg dark:shadow-none'
                             ref={panelRef}
                             {...autocomplete.getPanelProps()}
                         >

@@ -7,7 +7,7 @@ export default function AboutUs({ features }) {
         <>
             <SEO title='Sobre nosotros' />
             <div className='container text-center pb-5'>
-                <span className='text-lg font-bold text-blue-700'>
+                <span className='text-lg font-bold text-blue-700 dark:text-blue-400'>
                     Sobre este sitio web
                 </span>
                 <h1 className='text-3xl font-bold'>¿Qué queremos lograr?</h1>
@@ -16,7 +16,7 @@ export default function AboutUs({ features }) {
                     {features.map(({ id, attributes: feature }) => (
                         <div
                             key={id}
-                            className='flex flex-col sm:flex-row items-center sm:items-start sm:text-left gap-6 py-7 px-8 rounded-lg shadow'
+                            className='flex flex-col sm:flex-row items-center sm:items-start sm:text-left gap-6 py-7 px-8 rounded-lg shadow dark:shadow-none dark:bg-[#1d1e24]'
                         >
                             <div>
                                 <img
@@ -29,7 +29,7 @@ export default function AboutUs({ features }) {
                                 <h2 className='text-2xl mb-3 font-semibold'>
                                     {feature.name}
                                 </h2>
-                                <ReactMarkdown className='text-gray-800'>
+                                <ReactMarkdown className='text-gray-800 dark:text-gray-400'>
                                     {feature.description}
                                 </ReactMarkdown>
                             </div>

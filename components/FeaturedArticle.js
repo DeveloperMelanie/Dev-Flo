@@ -28,7 +28,7 @@ export default function FeaturedArticle({ article }) {
             </Link>
             <div className='pt-10 md:pl-4'>
                 <Link href={`/${article.slug}`}>
-                    <a className='uppercase block font-medium text-blue-700 text-sm mb-5 w-fit'>
+                    <a className='uppercase block font-medium text-blue-700 dark:text-blue-400 text-sm mb-5 w-fit'>
                         {article.category.data.attributes.name}
                     </a>
                 </Link>
@@ -37,15 +37,17 @@ export default function FeaturedArticle({ article }) {
                         <a>{article.title}</a>
                     </Link>
                 </h1>
-                <p className='uppercase text-gray-500 text-sm font-semibold mb-5'>
+                <p className='uppercase text-gray-500 dark:text-gray-400 text-sm font-semibold mb-5'>
                     <Link href={`/${article.slug}`}>
                         <a>{formatDate(article.date)}</a>
                     </Link>{' '}
                     - {article.time} minutos de lectura
                 </p>
-                <p className='mb-5 text-gray-800'>{article.preview}</p>
+                <p className='mb-5 text-gray-800 dark:text-gray-300'>
+                    {article.preview}
+                </p>
                 <Link href={`/${article.slug}`}>
-                    <a className='border-b border-blue-700 hover:border-black transition-colors duration-300'>
+                    <a className='border-b border-blue-700 dark:border-blue-400 hover:border-black dark:hover:border-white transition-colors duration-300'>
                         Leer más
                     </a>
                 </Link>

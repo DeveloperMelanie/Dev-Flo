@@ -13,13 +13,13 @@ export default function Article({ article, latestArticles }) {
             <SEO title={article.title} description={article.preview} />
             <div className='container lg:flex lg:justify-center lg:gap-12'>
                 <article className='lg:w-2/3'>
-                    <span className='uppercase block font-medium text-blue-700 text-sm mb-3 w-fit'>
+                    <span className='uppercase block font-medium text-blue-700 dark:text-blue-400 text-sm mb-3 w-fit'>
                         {article.category.data?.attributes.name}
                     </span>
                     <h1 className='text-4xl leading-tight font-bold mb-5 max-w-4xl'>
                         {article.title}
                     </h1>
-                    <p className='uppercase text-gray-500 text-sm font-semibold mb-8'>
+                    <p className='uppercase text-gray-500 dark:text-gray-400 text-sm font-semibold mb-8'>
                         {formatDate(article.date)} - {article.time} minutos de
                         lectura
                     </p>
@@ -34,7 +34,7 @@ export default function Article({ article, latestArticles }) {
                             alt={article.title}
                         />
                     </div>
-                    <div className='pt-10 sm:px-6'>
+                    <div className='pt-10 sm:px-6 dark:text-gray-300'>
                         <ReactMarkdown
                             components={{
                                 img: props => (
@@ -76,10 +76,10 @@ export default function Article({ article, latestArticles }) {
                                         />
                                     </div>
                                     <div>
-                                        <h4 className='text-lg font-semibold mb-3 hover:text-gray-700 transition-colors'>
+                                        <h4 className='text-lg font-semibold mb-3 hover:text-gray-700 dark:hover:text-gray-300 transition-colors'>
                                             {article.title}
                                         </h4>
-                                        <p className='uppercase text-gray-500 text-sm font-semibold'>
+                                        <p className='uppercase text-gray-500 dark:text-gray-400 text-sm font-semibold'>
                                             {formatDate(article.date)} -{' '}
                                             {article.time} minutos de lectura
                                         </p>

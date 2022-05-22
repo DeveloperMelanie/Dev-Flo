@@ -22,7 +22,7 @@ export default function Card({ article }) {
             </Link>
             <div className='pt-8'>
                 <Link href={`/${article.slug}`}>
-                    <a className='uppercase block font-medium text-blue-700 text-sm mb-4 w-fit'>
+                    <a className='uppercase block font-medium text-blue-700 dark:text-blue-400 text-sm mb-4 w-fit'>
                         {article.category.data?.attributes.name}
                     </a>
                 </Link>
@@ -31,7 +31,7 @@ export default function Card({ article }) {
                         <a>{article.title}</a>
                     </Link>
                 </h2>
-                <p className='uppercase text-gray-500 text-sm font-semibold mb-4'>
+                <p className='uppercase text-gray-500 dark:text-gray-400 text-sm font-semibold mb-4'>
                     <Link href={`/${article.slug}`}>
                         <a>{formatDate(article.date)}</a>
                     </Link>{' '}
@@ -39,7 +39,7 @@ export default function Card({ article }) {
                 </p>
                 <p className='mb-4 text-gray-800'>{article.content}</p>
                 <Link href={`/${article.slug}`}>
-                    <a className='border block text-center border-gray-200 py-2 hover:bg-gray-200 transition-colors'>
+                    <a className='border block text-center border-gray-200 dark:border-slate-500 py-2 hover:bg-gray-200 dark:hover:bg-slate-500 transition-colors'>
                         Leer más
                     </a>
                 </Link>

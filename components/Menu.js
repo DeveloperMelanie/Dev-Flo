@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Menu() {
     return (
         <nav className='hidden sm:block'>
-            <ul className='flex gap-5 text-base font-semibold text-gray-700'>
+            <ul className='flex gap-5 text-base font-semibold text-gray-700 dark:text-gray-400'>
                 <li>
                     <Link href='/'>
                         <a className='hover:underline'>Inicio</a>
