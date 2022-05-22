@@ -27,3 +27,8 @@ export const manageSearch = searchOpen => {
         }
     }
 }
+
+export const manageDarkMode = isDark => {
+    document.documentElement.classList.toggle('dark')
+    localStorage.setItem('dark', isDark)
+}

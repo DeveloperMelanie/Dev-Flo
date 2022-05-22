@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { manageSearch } from 'utils'
+import { manageDarkMode, manageSearch } from 'utils'
 import Search from './Search'
 import Menu from './Menu'
 import MobileMenu from './MobileMenu'
@@ -62,11 +62,7 @@ export default function Header() {
                             fill='none'
                             viewBox='0 0 24 24'
                             strokeWidth={2}
-                            onClick={() =>
-                                document.documentElement.classList.toggle(
-                                    'dark'
-                                )
-                            }
+                            onClick={() => manageDarkMode(true)}
                         >
                             <path
                                 strokeLinecap='round'
@@ -80,11 +76,7 @@ export default function Header() {
                             fill='none'
                             viewBox='0 0 24 24'
                             strokeWidth={2}
-                            onClick={() =>
-                                document.documentElement.classList.toggle(
-                                    'dark'
-                                )
-                            }
+                            onClick={() => manageDarkMode(false)}
                         >
                             <path
                                 strokeLinecap='round'

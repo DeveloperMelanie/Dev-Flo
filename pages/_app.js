@@ -4,6 +4,12 @@ import Footer from 'components/Footer'
 import 'styles/globals.css'
 
 export default function BlogSite({ Component, pageProps }) {
+    if (typeof window !== 'undefined') {
+        if (localStorage.getItem('dark') === 'true') {
+            document.documentElement.classList.add('dark')
+        }
+    }
+
     return (
         <>
             <SEO />
