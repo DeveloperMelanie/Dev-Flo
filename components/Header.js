@@ -3,6 +3,9 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { manageSearch } from 'utils'
 import Search from './Search'
+import Menu from './Menu'
+import MobileMenu from './MobileMenu'
+import MenuIcon from 'icons/MenuIcon'
 
 export default function Header() {
     const [showMenu, setShowMenu] = useState(false)
@@ -39,65 +42,13 @@ export default function Header() {
                                 />
                             </a>
                         </Link>
-                        <nav className='hidden sm:block'>
-                            <ul className='flex gap-5 text-base font-semibold text-gray-700'>
-                                <li>
-                                    <Link href='/'>
-                                        <a className='hover:underline'>
-                                            Inicio
-                                        </a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href='/sobre-nosotros'>
-                                        <a className='hover:underline'>
-                                            Sobre nosotros
-                                        </a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href='/autores'>
-                                        <a className='hover:underline'>
-                                            Autores
-                                        </a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href='/contacto'>
-                                        <a className='hover:underline'>
-                                            Contacto
-                                        </a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
+                        <Menu />
                     </div>
                     <div className='flex gap-4'>
-                        <div
-                            className='sm:hidden w-7 cursor-pointer z-50'
-                            role='button'
-                            onClick={() => setShowMenu(!showMenu)}
-                        >
-                            <div
-                                className={`w-full h-[1px] bg-gray-700 mb-2 transition-transform duration-300${
-                                    showMenu
-                                        ? ' -rotate-45 translate-y-[6px]'
-                                        : ''
-                                }`}
-                            ></div>
-                            <div
-                                className={`w-full h-[1px] bg-gray-700 mb-2 transition-opacity duration-300${
-                                    showMenu ? ' opacity-0' : ''
-                                }`}
-                            ></div>
-                            <div
-                                className={`w-full h-[1px] bg-gray-700 transition-transform duration-300${
-                                    showMenu
-                                        ? ' rotate-45 -translate-y-[12px]'
-                                        : ''
-                                }`}
-                            ></div>
-                        </div>
+                        <MenuIcon
+                            isActive={showMenu}
+                            changeState={setShowMenu}
+                        />
                         <img
                             src='/search.svg'
                             width={24}
@@ -108,34 +59,7 @@ export default function Header() {
                     </div>
                 </div>
             </header>
-            <div
-                className={`sm:hidden fixed z-40 top-0 left-0 w-full h-screen bg-white flex justify-center items-center text-center transition-all ease-in duration-300 ${
-                    showMenu ? 'opacity-100 visible' : 'opacity-0 invisible'
-                }`}
-            >
-                <ul className='flex flex-col gap-5 text-lg font-semibold text-gray-700'>
-                    <li>
-                        <Link href='/'>
-                            <a className='hover:underline'>Inicio</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href='/sobre-nosotros'>
-                            <a className='hover:underline'>Sobre nosotros</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href='/autores'>
-                            <a className='hover:underline'>Autores</a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href='/contacto'>
-                            <a className='hover:underline'>Contacto</a>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
+            <MobileMenu isOpen={showMenu} />
             <div
                 className={`relative z-20 transition-all duration-300 ${
                     showSearch ? 'opacity-100 visible' : 'opacity-0 invisible'
