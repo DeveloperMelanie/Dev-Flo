@@ -8,7 +8,7 @@ export default function BlogSite({ Component, pageProps }) {
     return (
         <>
             <SEO />
-            <ThemeProvider enableSystem={true} attribute='class'>
+            <ThemeProvider defaultTheme='light' attribute='class'>
                 <Header />
                 <main className='py-12'>
                     <Component {...pageProps} />

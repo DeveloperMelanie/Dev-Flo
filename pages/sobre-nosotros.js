@@ -22,7 +22,7 @@ export default function AboutUs({ features }) {
                                 <img
                                     src={feature.icon.data.attributes.url}
                                     alt={feature.name}
-                                    className='w-20 sm:w-60 md:w-72'
+                                    className='w-20 sm:w-60 md:w-72 dark:invert-[100%] dark:sepia-[2%] dark:saturate-[10%] dark:hue-rotate-[254deg] dark:brightness-[104%] dark:contrast-[100%]'
                                 />
                             </div>
                             <div>
