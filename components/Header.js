@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { manageDarkMode, manageSearch } from 'utils'
+import { manageSearch } from 'utils'
+import { useTheme } from 'next-themes'
 import Search from './Search'
 import Menu from './Menu'
 import MobileMenu from './MobileMenu'
@@ -11,6 +12,7 @@ export default function Header() {
     const [showMenu, setShowMenu] = useState(false)
     const [showSearch, setShowSearch] = useState(false)
     const router = useRouter()
+    const { setTheme } = useTheme()
 
     useEffect(() => {
         if (showMenu) setShowMenu(false)
@@ -62,7 +64,7 @@ export default function Header() {
                             fill='none'
                             viewBox='0 0 24 24'
                             strokeWidth={2}
-                            onClick={() => manageDarkMode(true)}
+                            onClick={() => setTheme('dark')}
                         >
                             <path
                                 strokeLinecap='round'
@@ -76,7 +78,7 @@ export default function Header() {
                             fill='none'
                             viewBox='0 0 24 24'
                             strokeWidth={2}
-                            onClick={() => manageDarkMode(false)}
+                            onClick={() => setTheme('light')}
                         >
                             <path
                                 strokeLinecap='round'
