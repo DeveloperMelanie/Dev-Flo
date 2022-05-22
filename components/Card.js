@@ -39,7 +39,7 @@ export default function Card({ article }) {
                 </p>
                 <p className='mb-4 text-gray-800'>{article.content}</p>
                 <Link href={`/${article.slug}`}>
-                    <a className='border block text-center border-gray-200 dark:border-slate-500 py-2 hover:bg-gray-200 dark:hover:bg-slate-500 transition-colors'>
+                    <a className='border block text-center border-gray-200 dark:border-neutral-700 py-2 hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors'>
                         Leer más
                     </a>
                 </Link>

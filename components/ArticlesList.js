@@ -4,14 +4,10 @@ import Card from './Card'
 
 export default function ArticlesList({ articles: posts }) {
     const [articles, setArticles] = useState(posts.slice(0, 6))
-    const [showAll, setShowAll] = useState(false)
+    const [showAll, setShowAll] = useState(true)
 
     useEffect(() => {
-        if (showAll) setArticles(posts)
-    }, [showAll])
-
-    useEffect(() => {
-        if (articles.length <= 5) setShowAll(true)
+        if (articles.length > 5) setShowAll(false)
     }, [])
 
     return (
@@ -28,16 +24,19 @@ export default function ArticlesList({ articles: posts }) {
             </div>
             {!showAll && (
                 <div className='relative flex justify-center items-center pt-14 pb-6'>
-                    <div className='px-5 bg-white'>
+                    <div className='px-5 bg-white dark:bg-[#131414]'>
                         <button
                             type='button'
-                            onClick={() => setShowAll(true)}
-                            className='px-14 py-3 border border-gray-200 hover:bg-gray-200 transition-colors'
+                            onClick={() => {
+                                setShowAll(true)
+                                setArticles(posts)
+                            }}
+                            className='px-14 py-3 border border-gray-200 dark:border-neutral-700 hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors'
                         >
                             Cargar más
                         </button>
                     </div>
-                    <div className='absolute w-full bg-gray-200 h-px -z-10'></div>
+                    <div className='absolute w-full bg-gray-200 dark:bg-neutral-700 h-px -z-10'></div>
                 </div>
             )}
         </>
