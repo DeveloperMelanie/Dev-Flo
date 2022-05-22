@@ -91,7 +91,7 @@ export default function Header() {
             </header>
             <MobileMenu isOpen={showMenu} />
             <div
-                className={`relative z-20 transition-all duration-300 ${
+                className={`relative z-50 transition-all duration-300 ${
                     showSearch ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
             >
