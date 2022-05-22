@@ -36,7 +36,7 @@ export default function Footer() {
                 </li>
             </ul>
             <p className='text-gray-700'>
-                Diseñado por Lázaro - &copy; {actualYear}
+                Dev-Flo | Descubre el mundo - &copy; {actualYear}
             </p>
         </footer>
     )
