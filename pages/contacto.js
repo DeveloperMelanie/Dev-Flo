@@ -71,6 +71,7 @@ export default function ContactUs() {
                                         text: 'Algo salió mal 😥',
                                         icon: 'error',
                                         confirmButtonText: 'OK',
+                                        confirmButtonColor: '#1e40af',
                                     })
                                 } finally {
                                     resetForm()
