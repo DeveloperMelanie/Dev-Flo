@@ -55,9 +55,9 @@ export default function Article({ article, latestArticles }) {
                     </div>
                 </article>
                 <aside className='lg:w-1/3 pt-6 lg:pt-0'>
-                    <h5 className='text-xl font-bold pb-3 border-b border-gray-300'>
+                    <span className='block text-xl font-bold pb-3 border-b border-gray-300'>
                         Últimas publicaciones
-                    </h5>
+                    </span>
                     <div className='pt-8 flex flex-col gap-6'>
                         {latestArticles.map(article => (
                             <Link key={article.slug} href={`/${article.slug}`}>
