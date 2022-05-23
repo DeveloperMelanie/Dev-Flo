@@ -17,9 +17,7 @@ export const manageSearch = searchOpen => {
         search.focus()
     }, 50)
 
-    outOfSearch.onclick = () => {
-        searchOpen(false)
-    }
+    outOfSearch.onclick = () => searchOpen(false)
 
     window.onkeydown = e => {
         if (e.key === 'Escape') {

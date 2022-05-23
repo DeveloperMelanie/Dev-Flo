@@ -50,6 +50,7 @@ export default function Search(props) {
         () =>
             createAutocomplete({
                 placeholder: 'Buscar artículos',
+                debug: true,
                 onStateChange: ({ state }) => setAutocompleteState(state),
                 getSources: () => [
                     {

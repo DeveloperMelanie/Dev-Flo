@@ -17,7 +17,7 @@ export default function Header() {
     useEffect(() => {
         if (showMenu) setShowMenu(false)
         if (showSearch) setShowSearch(false)
-    }, [router.pathname])
+    }, [router.asPath])
 
     useEffect(() => {
         if (showMenu || showSearch) {
