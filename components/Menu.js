@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Menu() {
     return (
-        <nav className='hidden sm:block'>
+        <nav className='hidden sm:block whitespace-nowrap'>
             <ul className='flex gap-5 text-base font-semibold text-gray-700 dark:text-gray-400'>
                 <li>
                     <Link href='/'>

@@ -34,7 +34,7 @@ export default function Header() {
         <>
             <header className='py-8 border-b border-gray-100 dark:border-slate-50/[0.06] shadow-sm dark:shadow-none'>
                 <div className='container flex justify-between items-center'>
-                    <div className='flex items-center gap-14'>
+                    <div className='flex items-center gap-14 pr-4 sm:pr-0'>
                         <Link href='/'>
                             <a>
                                 <img
@@ -46,7 +46,7 @@ export default function Header() {
                         </Link>
                         <Menu />
                     </div>
-                    <div className='flex gap-4'>
+                    <div className='flex gap-4 sm:pl-6 md:pl-0'>
                         <MenuIcon
                             isActive={showMenu}
                             changeState={setShowMenu}

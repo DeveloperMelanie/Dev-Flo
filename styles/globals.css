@@ -104,3 +104,20 @@ input[type='search']::-webkit-search-results-decoration {
 .dark .article a:hover {
     box-shadow: 0 -1px 0 0 rgb(209 213 219) inset;
 }
+
+.dark .swal2-popup {
+    background: #262626;
+    color: #d3d3d3;
+}
+
+.dark .swal2-icon.swal2-success {
+    background-color: #262626 !important;
+}
+
+.swal2-styled.swal2-default-outline:focus {
+    box-shadow: none !important;
+}
+
+.dark .swal2-icon.swal2-success [class^='swal2-success-line'] {
+    background-color: #b2eb91;
+}
